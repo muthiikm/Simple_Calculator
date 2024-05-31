@@ -2,6 +2,7 @@ package com.example.simple_calculator
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.example.simple_calculator.databinding.ActivityMainBinding
 import com.example.simple_calculator.viewmodel.CalculatorViewModel
 
@@ -14,13 +15,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.input.observe(this, { input ->
+        viewModel.input.observe(this) { input ->
             binding.textView.text = input
-        })
+        }
 
-        viewModel.result.observe(this, { result ->
+
+        viewModel.result.observe(this) { result ->
             binding.result.text = result
-        })
+        }
 
         setUpButtons()
     }

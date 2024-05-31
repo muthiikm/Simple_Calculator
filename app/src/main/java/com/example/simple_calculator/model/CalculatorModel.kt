@@ -1,36 +1,36 @@
 package com.example.simple_calculator.model
 
 class CalculatorModel {
-    private var operand1: Double = 0.0
-    private var operand2: Double = 0.0
+    private var value1: Double = 0.0
+    private var value2: Double = 0.0
     private var operator: String = ""
 
-    fun setOperand1(value: Double) {
-        operand1 = value
+    fun setValue1(value: Double) {
+        value1 = value
     }
 
-    fun setOperand2(value: Double) {
-        operand2 = value
+    fun setValue2(value: Double) {
+        value2 = value
     }
 
-    fun setOperator(op: String) {
+    fun setValue(op: String) {
         operator = op
     }
 
     fun calculate(): Double {
         return when (operator) {
-            "+" -> operand1 + operand2
-            "-" -> operand1 - operand2
-            "*" -> operand1 * operand2
-            "/" -> operand1 / operand2
-            "%" -> operand1 % operand2
+            "+" -> value1 + value2
+            "-" -> value1 - value2
+            "*" -> value1 * value2
+            "/" -> value1 / value2
+            "%" -> value1 % value2
             else -> 0.0
         }
     }
 
     fun clear() {
-        operand1 = 0.0
-        operand2 = 0.0
+        value1 = 0.0
+        value2 = 0.0
         operator = ""
     }
 }
